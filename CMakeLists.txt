@@ -51,4 +51,4 @@ FetchContent_MakeAvailable(imgui)
 add_subdirectory(src/dll)
 add_subdirectory(src/injector)
 
-message(STATUS "Xeno configured for ${CMAKE_GENERATOR} (${CMAKE_GENERATOR_PLATFORM})")
+message(STATUS "Xeno configured for ${CMAKE_GENERATOR} (${CMAKE_GENERATOR_PLATFORM})") # v2
