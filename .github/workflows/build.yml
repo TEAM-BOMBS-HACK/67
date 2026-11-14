@@ -1,0 +1,26 @@
+name: Build Xeno
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+      - name: Configure CMake
+        run: cmake --preset msvc-x64
+      - name: Build Release
+        run: cmake --build --preset release
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: xeno-build
+          path: |
+            build/src/dll/Release/xeno.dll
+            build/src/injector/Release/xeno_injector.exe
+          retention-days: 7
