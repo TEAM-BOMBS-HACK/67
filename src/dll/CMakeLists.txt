@@ -45,6 +45,8 @@ target_include_directories(xeno PRIVATE
     ${luau_SOURCE_DIR}/Ast/include
     ${luau_SOURCE_DIR}/Common/include
     ${minhook_SOURCE_DIR}/include
+    ${imgui_SOURCE_DIR}
+    ${imgui_SOURCE_DIR}/backends
 )
 
 target_compile_definitions(xeno PRIVATE

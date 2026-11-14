@@ -43,7 +43,7 @@ struct overlay_state {
     WNDPROC previous_wndproc = nullptr;
 
     using present_fn = HRESULT(WINAPI*)(IDXGISwapChain*, UINT, UINT);
-    using resize_fn = HRESULT(WINAPI*)(IDXGISwapChain*, UINT, UINT, UINT);
+    using resize_fn = HRESULT(WINAPI*)(IDXGISwapChain*, UINT, UINT, UINT, UINT);
 
     present_fn present = nullptr;
     resize_fn resize = nullptr;

@@ -25,7 +25,8 @@ constexpr int registry_genv = 0x58454E50;
 
 int raise_error(lua_State* state, const char* message) {
     lua_pushstring(state, message);
-    return lua_error(state);
+    lua_error(state);
+    return 0; // unreachable
 }
 
 int request_fail(lua_State* state, const std::string& message) {
@@ -101,7 +102,8 @@ int proxy_call(lua_State* state) {
 
     const int status = lua_pcall(state, arguments, LUA_MULTRET, 0);
     if (status != 0) {
-        return lua_error(state);
+        lua_error(state);
+        return 0; // unreachable
     }
     return lua_gettop(state);
 }
