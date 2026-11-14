@@ -16,6 +16,9 @@
 #include "imgui_impl_dx11.h"
 #include "imgui_impl_win32.h"
 
+// explicit forward declaration
+extern __declspec(dllimport) long __stdcall ImGui_ImplWin32_WndProcHandler(void* hWnd, unsigned int msg, unsigned __int64 wParam, __int64 lParam);
+
 #include <atomic>
 #include <cstring>
 #include <mutex>
